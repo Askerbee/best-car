@@ -5,6 +5,7 @@ interface LinkProps {
   href: string;
   children: React.ReactNode;
   className?: string;
+  onClick?: () => void;
 }
 
 export const Link: React.FC<LinkProps> = ({ href, children, className }) => {
