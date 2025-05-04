@@ -1,4 +1,4 @@
-import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { MessageCircle, Instagram, Send } from 'lucide-react';
 import { Link } from './ui/Link';
 
 const Footer = () => {
@@ -16,20 +16,17 @@ const Footer = () => {
               />
             </Link>
             <p className="text-gray-400 mb-6">
-              Премиальные услуги аренды автомобилей, адаптированные к вашим потребностям. Ощутите роскошь и комфорт в вашем путешествии.
+              Прокат автомобилей, адаптированных к вашим потребностям. Ощутите легкость и комфорт в ваших путешествиях.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-red-600 transition-colors duration-200">
-                <Facebook className="h-5 w-5" />
+              <a href="http://wa.me/89287115711" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-red-600 transition-colors duration-200">
+                <MessageCircle className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-red-600 transition-colors duration-200">
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-red-600 transition-colors duration-200">
+              <a href="https://www.instagram.com/bestcar_07?igsh=MWgyaXFiMnFucW5lOA==" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-red-600 transition-colors duration-200">
                 <Instagram className="h-5 w-5" />
               </a>
               <a href="#" className="text-gray-400 hover:text-red-600 transition-colors duration-200">
-                <Linkedin className="h-5 w-5" />
+                <Send className="h-5 w-5" />
               </a>
             </div>
           </div>
@@ -43,27 +40,27 @@ const Footer = () => {
             </h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/about" className="text-gray-400 hover:text-red-600 transition-colors duration-200">
+                <Link href="#" className="text-gray-400 hover:text-red-600 transition-colors duration-200">
                   О нас
                 </Link>
               </li>
               <li>
-                <Link href="/vehicles" className="text-gray-400 hover:text-red-600 transition-colors duration-200">
+                <Link href="#featured" className="text-gray-400 hover:text-red-600 transition-colors duration-200">
                   Наши автомобили
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-gray-400 hover:text-red-600 transition-colors duration-200">
+                <Link href="#services" className="text-gray-400 hover:text-red-600 transition-colors duration-200">
                   Услуги
                 </Link>
               </li>
               <li>
-                <Link href="/testimonials" className="text-gray-400 hover:text-red-600 transition-colors duration-200">
+                <Link href="#testimonials" className="text-gray-400 hover:text-red-600 transition-colors duration-200">
                   Отзывы
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-gray-400 hover:text-red-600 transition-colors duration-200">
+                <Link href="#contact" className="text-gray-400 hover:text-red-600 transition-colors duration-200">
                   Контакты
                 </Link>
               </li>
@@ -79,29 +76,40 @@ const Footer = () => {
             </h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/vehicles/suv" className="text-gray-400 hover:text-red-600 transition-colors duration-200">
+                <a 
+                  href="#featured" 
+                  onClick={() => window.dispatchEvent(new CustomEvent('setCarFilter', { detail: 'Внедорожник' }))}
+                  className="text-gray-400 hover:text-red-600 transition-colors duration-200"
+                >
                   Внедорожники
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/vehicles/sedan" className="text-gray-400 hover:text-red-600 transition-colors duration-200">
+                <a 
+                  href="#featured"
+                  onClick={() => window.dispatchEvent(new CustomEvent('setCarFilter', { detail: 'Седан' }))}
+                  className="text-gray-400 hover:text-red-600 transition-colors duration-200"
+                >
                   Седаны
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/vehicles/truck" className="text-gray-400 hover:text-red-600 transition-colors duration-200">
+                <a 
+                  href="#featured"
+                  onClick={() => window.dispatchEvent(new CustomEvent('setCarFilter', { detail: 'Грузовик' }))}
+                  className="text-gray-400 hover:text-red-600 transition-colors duration-200"
+                >
                   Грузовики
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/vehicles/luxury" className="text-gray-400 hover:text-red-600 transition-colors duration-200">
+                <a 
+                  href="#featured"
+                  onClick={() => window.dispatchEvent(new CustomEvent('setCarFilter', { detail: 'Строительная техника' }))}
+                  className="text-gray-400 hover:text-red-600 transition-colors duration-200"
+                >
                   Строительная техника
-                </Link>
-              </li>
-              <li>
-                <Link href="/vehicles/electric" className="text-gray-400 hover:text-red-600 transition-colors duration-200">
-                  Электромобили
-                </Link>
+                </a>
               </li>
             </ul>
           </div>

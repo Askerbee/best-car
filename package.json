@@ -8,7 +8,9 @@
     "build": "tsc && vite build",
     "start": "serve dist -s -p $PORT",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "wrangler deploy",
+    "test": "vitest"
   },
   "dependencies": {
     "lucide-react": "^0.294.0",

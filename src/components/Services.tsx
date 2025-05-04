@@ -1,50 +1,34 @@
 import { Shield, Clock, Gift, Truck } from 'lucide-react';
 
 const Services = () => {
-  const services = [
-    {
-      icon: <Shield className="h-12 w-12 text-red-600" />,
-      title: 'Защита автомобиля',
-      description: 'Все наши автомобили поставляются с комплексным страховым покрытием, чтобы обеспечить вашу безопасность на дороге.'
-    },
-    {
-      icon: <Clock className="h-12 w-12 text-red-600" />,
-      title: 'Поддержка 24/7',
-      description: 'Наша команда обслуживания клиентов доступна круглосуточно, чтобы помочь вам с любыми вопросами.'
-    },
-    {
-      icon: <Gift className="h-12 w-12 text-red-600" />,
-      title: 'Специальные предложения',
-      description: 'Получите эксклюзивные скидки на долгосрочную аренду и дополнительные преимущества для постоянных клиентов.'
-    },
-    {
-      icon: <Truck className="h-12 w-12 text-red-600" />,
-      title: 'Бесплатная доставка',
-      description: 'Мы предлагаем бесплатную доставку автомобиля в любую точку города для вашего удобства.'
-    }
-  ];
-
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-white" id="services">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-navy-900 mb-4">Почему выбирают Best Car</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Мы стремимся предоставлять исключительный сервис и премиальные автомобили, чтобы ваше путешествие было комфортным и беззаботным.
-          </p>
+          <h2 className="text-3xl font-bold text-navy-900 mb-4">Наши услуги</h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className="bg-gray-50 p-8 rounded-lg text-center hover:shadow-md transition-shadow duration-300"
-            >
-              <div className="flex justify-center mb-4">{service.icon}</div>
-              <h3 className="text-xl font-bold text-navy-900 mb-2">{service.title}</h3>
-              <p className="text-gray-600">{service.description}</p>
-            </div>
-          ))}
+        <div className="max-w-4xl mx-auto space-y-8">
+          <div className="bg-gray-50 p-8 rounded-lg">
+            <h3 className="text-xl font-bold text-navy-900 mb-4">Быстрота</h3>
+            <p className="text-gray-600">
+              Оформление аренды и страхования проходит быстро и без лишних задержек. Онлайн-бронирование, мгновенная подача автомобиля и круглосуточная поддержка.
+            </p>
+          </div>
+
+          <div className="bg-gray-50 p-8 rounded-lg">
+            <h3 className="text-xl font-bold text-navy-900 mb-4">Надёжность</h3>
+            <p className="text-gray-600">
+              Весь автопарк проходит регулярное техобслуживание, а страховые пакеты защищают от непредвиденных ситуаций. Вы можете быть уверены: мы всегда на вашей стороне.
+            </p>
+          </div>
+
+          <div className="bg-gray-50 p-8 rounded-lg">
+            <h3 className="text-xl font-bold text-navy-900 mb-4">Сервис</h3>
+            <p className="text-gray-600">
+              Вежливые сотрудники, прозрачные условия и индивидуальный подход. Мы сопровождаем вас на каждом этапе — от первого клика до возврата автомобиля.
+            </p>
+          </div>
         </div>
       </div>
     </section>

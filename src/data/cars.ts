@@ -17,7 +17,7 @@ export const carData: Car[] = [
   {
     id: 1,
     name: "Ford Kuga",
-    price: 3500,
+    price: 4499,
     image: "https://i.ibb.co/hFvVR8JB/kuga3.jpg",
     images: [
       "https://i.ibb.co/V0Q1t88P/IMG-1522.jpg",
@@ -60,7 +60,7 @@ export const carData: Car[] = [
   {
     id: 3,
     name: "Volkswagen Tiguan",
-    price: 3500,
+    price: 4499,
     image: "https://i.ibb.co/99vTDc95/IMG-9952.jpg",
     images: [
       "https://i.ibb.co/99vTDc95/IMG-9952.jpg",
@@ -80,7 +80,7 @@ export const carData: Car[] = [
   {
     id: 4,
     name: "Hyundai Solaris",
-    price: 3200,
+    price: 2999,
     image: "https://i.ibb.co/R4d0tDbB/IMG-9975.jpg",
     images: [
       "https://i.ibb.co/R4d0tDbB/IMG-9975.jpg",

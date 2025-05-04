@@ -99,7 +99,7 @@ const CarModal = ({ car, onClose }: CarModalProps) => {
                         className="flex items-center text-navy-900 hover:text-red-600 transition-colors"
                       >
                         <Phone className="h-5 w-5 mr-2" />
-                        <span>8(928) 711-5-711</span>
+                        <span>8 (928) 711-5-711</span>
                       </a>
                       <a 
                         href="mailto:bestcar07@mail.ru" 

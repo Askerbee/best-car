@@ -102,7 +102,7 @@ const ContactForm = () => {
                 </div>
                 <div>
                   <h4 className="font-medium">Телефон</h4>
-                  <p className="text-gray-300">8(928) 711-5-711</p>
+                  <p className="text-gray-300">8 (928) 711-5-711</p>
                 </div>
               </div>
               
@@ -130,12 +130,8 @@ const ContactForm = () => {
             <div className="mt-12">
               <h4 className="font-medium mb-4">Часы работы</h4>
               <div className="grid grid-cols-2 gap-2 text-sm">
-                <div>Понедельник - Пятница:</div>
+                <div>Ежедневно:</div>
                 <div>9:00 - 18:00</div>
-                <div>Суббота:</div>
-                <div>10:00 - 16:00</div>
-                <div>Воскресенье:</div>
-                <div>Выходной</div>
               </div>
             </div>
           </div>

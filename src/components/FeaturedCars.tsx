@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Star, Filter, ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react';
 import { carData } from '../data/cars';
 import CarModal from './CarModal';
@@ -62,6 +62,17 @@ const FeaturedCars = () => {
   const [showFilters, setShowFilters] = useState(false);
   const [selectedCar, setSelectedCar] = useState<typeof carData[0] | null>(null);
 
+  useEffect(() => {
+    const handleSetFilter = (event: CustomEvent) => {
+      setActiveFilter(event.detail);
+    };
+
+    window.addEventListener('setCarFilter', handleSetFilter as EventListener);
+    return () => {
+      window.removeEventListener('setCarFilter', handleSetFilter as EventListener);
+    };
+  }, []);
+
   const filters = ['Все', 'Внедорожник', 'Седан', 'Грузовик', 'Строительная техника'];
 
   const filteredCars = activeFilter === 'Все' 
@@ -82,7 +93,7 @@ const FeaturedCars = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-navy-900 mb-4">Популярные автомобили</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Изучите наш выбор премиальных автомобилей. Каждый автомобиль прошел тщательную проверку, чтобы обеспечить качество и надежность.
+            Изучите каталог наших автомобилей. Каждый автомобиль прошел тщательную проверку, чтобы обеспечить качество и надежность.
           </p>
         </div>
 
