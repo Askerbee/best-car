@@ -3,9 +3,18 @@ import { Star, Filter, ChevronDown, ChevronLeft, ChevronRight } from 'lucide-rea
 import { carData } from '../data/cars';
 import CarModal from './CarModal';
 
+// Функция для получения правильного URL изображения
+const getImageUrl = (path: string) => {
+  // Убираем начальный слеш, если он есть
+  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+  // Используем новый URL с origin для абсолютного пути
+  return new URL(`/${cleanPath}`, window.location.origin).href;
+};
+
 // Компонент карусели для изображений
 const ImageCarousel = ({ images, name }: { images: string[], name: string }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [imageErrors, setImageErrors] = useState<{[key: string]: boolean}>({});
   
   const prevImage = () => {
     setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
@@ -15,16 +24,33 @@ const ImageCarousel = ({ images, name }: { images: string[], name: string }) => 
     setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
   };
 
+  useEffect(() => {
+    // Предзагрузка всех изображений
+    images.forEach((imgPath) => {
+      const img = new Image();
+      img.src = getImageUrl(imgPath);
+    });
+  }, [images]);
+
   if (!images || images.length === 0) {
     return null;
   }
+
+  const handleImageError = (imgPath: string) => {
+    setImageErrors(prev => ({ ...prev, [imgPath]: true }));
+    // Если текущее изображение не загрузилось, переключаемся на следующее
+    if (imgPath === images[currentIndex]) {
+      nextImage();
+    }
+  };
   
   return (
     <div className="relative h-60">
       <img
-        src={images[currentIndex]}
+        src={getImageUrl(images[currentIndex])}
         alt={`${name} - изображение ${currentIndex + 1}`}
         className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+        onError={() => handleImageError(images[currentIndex])}
       />
       {images.length > 1 && (
         <>
@@ -48,6 +74,7 @@ const ImageCarousel = ({ images, name }: { images: string[], name: string }) => 
                   index === currentIndex ? 'bg-white' : 'bg-white/50'
                 }`}
                 onClick={() => setCurrentIndex(index)}
+                disabled={imageErrors[images[index]]}
               />
             ))}
           </div>
@@ -154,13 +181,20 @@ const FeaturedCars = () => {
             >
               <div className="relative h-60 overflow-hidden">
                 {car.images && car.images.length > 0 ? (
-                  <ImageCarousel images={car.images} name={car.name} />
+                  <ImageCarousel 
+                    images={[car.image, ...car.images].filter(Boolean)} 
+                    name={car.name} 
+                  />
                 ) : (
-                <img
-                  src={car.image}
-                  alt={car.name}
-                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-                />
+                  <img
+                    src={getImageUrl(car.image)}
+                    alt={car.name}
+                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                    onError={(e) => {
+                      console.error(`Failed to load image for ${car.name}`);
+                      e.currentTarget.style.display = 'none';
+                    }}
+                  />
                 )}
                 {car.featured && (
                   <div className="absolute top-4 right-4 bg-red-600 text-white text-xs font-semibold px-2 py-1 rounded">

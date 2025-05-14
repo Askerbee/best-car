@@ -18,17 +18,13 @@ export const carData: Car[] = [
     id: 1,
     name: "Ford Kuga",
     price: 4499,
-    image: "https://i.ibb.co/hFvVR8JB/kuga3.jpg",
+    image: "images/cars/kuga/main.jpg",
     images: [
-      "https://i.ibb.co/V0Q1t88P/IMG-1522.jpg",
-      "https://i.ibb.co/tPDGjpFQ/IMG-1526.jpg",
-      "https://i.ibb.co/3y1XCV8p/IMG-1527.jpg",
-      "https://i.ibb.co/mVqwKv6h/IMG-1529.jpg",
-      "https://i.ibb.co/S7K10TLK/IMG-1530.jpg",
-      "https://i.ibb.co/Xf5HR0w7/kuga.jpg",
-      "https://i.ibb.co/99pfPD6T/kuga1.jpg",
-      "https://i.ibb.co/gbXrFH5w/kuga2.jpg",
-      "https://i.ibb.co/hFvVR8JB/kuga3.jpg"
+      "images/cars/kuga/1.jpg",
+      "images/cars/kuga/2.jpg",
+      "images/cars/kuga/3.jpg",
+      "images/cars/kuga/4.jpg",
+      "images/cars/kuga/5.jpg"
     ],
     type: "SUV",
     year: 2014,
@@ -42,12 +38,12 @@ export const carData: Car[] = [
     id: 2,
     name: "Volkswagen Polo",
     price: 2999,
-    image: "https://i.ibb.co/WN1yQwKd/IMG-9986.jpg",
+    image: "images/cars/polo/main.jpg",
     images: [
-      "https://i.ibb.co/WN1yQwKd/IMG-9986.jpg",
-      "https://i.ibb.co/GLjLXrQ/IMG-9987.jpg",
-      "https://i.ibb.co/F4p8kRHw/IMG-9988.jpg",
-      "https://i.ibb.co/gb2Pts3G/IMG-9989.jpg"
+      "images/cars/polo/1.jpg",
+      "images/cars/polo/2.jpg",
+      "images/cars/polo/3.jpg",
+      "images/cars/polo/4.jpg"
     ],
     type: "Sedan",
     year: 2012,
@@ -61,13 +57,13 @@ export const carData: Car[] = [
     id: 3,
     name: "Volkswagen Tiguan",
     price: 4499,
-    image: "https://i.ibb.co/99vTDc95/IMG-9952.jpg",
+    image: "images/cars/tiguan/main.jpg",
     images: [
-      "https://i.ibb.co/99vTDc95/IMG-9952.jpg",
-      "https://i.ibb.co/Cp0bVnhh/IMG-9953.jpg",
-      "https://i.ibb.co/mx6Br8N/IMG-9954.jpg",
-      "https://i.ibb.co/43Mg6f9/IMG-9955.jpg",
-      "https://i.ibb.co/s8Mbq5h/IMG-9956.jpg"
+      "images/cars/tiguan/1.jpg",
+      "images/cars/tiguan/2.jpg",
+      "images/cars/tiguan/3.jpg",
+      "images/cars/tiguan/4.jpg",
+      "images/cars/tiguan/5.jpg"
     ],
     type: "SUV",
     year: 2012,
@@ -81,12 +77,12 @@ export const carData: Car[] = [
     id: 4,
     name: "Hyundai Solaris",
     price: 2999,
-    image: "https://i.ibb.co/R4d0tDbB/IMG-9975.jpg",
+    image: "images/cars/solaris/main.jpg",
     images: [
-      "https://i.ibb.co/R4d0tDbB/IMG-9975.jpg",
-      "https://i.ibb.co/hx41Fb5F/IMG-9976.jpg",
-      "https://i.ibb.co/0ydKfLZh/IMG-9977.jpg",
-      "https://i.ibb.co/NggS4Rfd/IMG-9978.jpg"
+      "images/cars/solaris/1.jpg",
+      "images/cars/solaris/2.jpg",
+      "images/cars/solaris/3.jpg",
+      "images/cars/solaris/4.jpg"
     ],
     type: "Sedan",
     year: 2014,
